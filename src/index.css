@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+:root {
+  --quant-bg: #0A0B0D;
+  --quant-surface: #141518;
+  --quant-border: #2D2E32;
+  --quant-green: #00E676;
+  --quant-red: #FF3333;
+  --quant-blue: #2196F3;
+  --quant-text: #E0E0E0;
+  --quant-muted: #6B7280;
+}
+
+.light {
+  --quant-bg: #F8F9FA;
+  --quant-surface: #FFFFFF;
+  --quant-border: #E2E8F0;
+  --quant-green: #059669;
+  --quant-red: #DC2626;
+  --quant-blue: #2563EB;
+  --quant-text: #1E293B;
+  --quant-muted: #64748B;
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-quant-bg: var(--quant-bg);
+  --color-quant-surface: var(--quant-surface);
+  --color-quant-border: var(--quant-border);
+  --color-quant-green: var(--quant-green);
+  --color-quant-red: var(--quant-red);
+  --color-quant-blue: var(--quant-blue);
+  --color-quant-text: var(--quant-text);
+  --color-quant-muted: var(--quant-muted);
+
+  --color-chart-red: var(--quant-red);
+  --color-chart-green: var(--quant-green);
+  --color-chart-blue: var(--quant-blue);
+  --color-chart-yellow: #EAB308;
+  --color-chart-purple: #A855F7;
+  
+  --animate-spin-slow: spin 3s linear infinite;
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+}
+
+body {
+  @apply bg-quant-bg text-quant-text font-sans antialiased overflow-hidden;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-quant-bg;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-quant-border rounded-full hover:bg-quant-muted;
+}
